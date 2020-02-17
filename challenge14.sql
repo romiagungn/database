@@ -3,28 +3,63 @@ CREATE TABLE jurusan(
     nama_jurusan varchar(50)
 );
 
+
 CREATE TABLE mahasiswa(
-    nim varchar(50) primary key,
+    nim varchar(50) primary key NOT NULL,
     nama varchar(50),
     alamat varchar(50),
-    id_jurusan varchar(50)
+    jurusan varchar(50),
+    FOREIGN KEY (jurusan) REFERENCES jurusan (id_jurusan)
 );
 
 CREATE TABLE mata_kuliah(
-    id_matkul varchar(50) primary key,
+    id_matkul varchar(50) primary key NOT NULL,
     nama varchar(50),
     sks varchar(50)
 );
 
 CREATE TABLE dosen(
-    id_dosen varchar(50) primary key,
+    id_dosen varchar(50) primary key NOT NULL,
     nama varchar(50)
 );
 
 CREATE TABLE kontrak(
-    id_kontrak varchar(50) primary key,
+    id_kontrak varchar(50) primary key NOT NULL,
     nilai integer,
     nim varchar(50),
     id_matkul varchar(50),
-    id_dosenn VARCHAR (50)    
+    id_dosen VARCHAR (50),
+    FOREIGN KEY (nim) REFERENCES mahasiswa (nim),
+    FOREIGN KEY (id_matkul) REFERENCES mata_kuliah (id_matkul),
+    FOREIGN KEY (id_dosen) REFERENCES dosen (id_dosen)        
 );
+
+
+INSERT INTO jurusan (id_jurusan, nama_jurusan) 
+values ('J001' , 'informatika'), 
+ ('J002' , 'manajemen'),
+ ('J003' , 'dkv');
+
+INSERT INTO mahasiswa (nim, nama, alamat, jurusan) values 
+('M001','romie','bandung','J001'),
+('M002','yasa','garut','J002'),
+('M003','razan','bandung','J003'),
+('M004','bayu','sukabumi','J002'),
+('M005','JR','jakarta','J001');
+
+INSERT INTO mata_kuliah (id_matkul, nama, sks) values 
+('P001','data mining','2'),
+('P002','komputer','2'),
+('P003','sistem informasi','3');
+
+INSERT INTO dosen (id_dosen, nama) values 
+('D001','agung'),
+('D002','asep'),
+('D003','eko');
+
+INSERT INTO kontrak (id_kontrak, nilai, nim, id_matkul, id_dosen) values 
+('K001','100','M001','P001','D001'),
+('K002','80','M002','P001','D002'),
+('K003','20','M003','P002','D003'),
+('K004','30','M004','P002','D001'),
+('K005','40','M005','P003','D002');
