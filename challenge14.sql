@@ -20,3 +20,11 @@ CREATE TABLE dosen(
     id_dosen varchar(50) primary key,
     nama varchar(50)
 );
+
+CREATE TABLE kontrak(
+    id_kontrak varchar(50) primary key,
+    nilai integer,
+    nim varchar(50),
+    id_matkul varchar(50),
+    id_dosenn VARCHAR (50)    
+);
