@@ -14,13 +14,13 @@ CREATE TABLE mahasiswa(
 
 CREATE TABLE mata_kuliah(
     id_matkul varchar(50) primary key NOT NULL,
-    nama varchar(50),
+    nama_matkul varchar(50),
     sks varchar(50)
 );
 
 CREATE TABLE dosen(
     id_dosen varchar(50) primary key NOT NULL,
-    nama varchar(50)
+    nama_dosen varchar(50)
 );
 
 CREATE TABLE kontrak(
@@ -47,19 +47,22 @@ INSERT INTO mahasiswa (nim, nama, alamat, jurusan) values
 ('M004','bayu','sukabumi','J002'),
 ('M005','JR','jakarta','J001');
 
-INSERT INTO mata_kuliah (id_matkul, nama, sks) values 
+INSERT INTO mata_kuliah (id_matkul, nama_matkul, sks) values 
 ('P001','data mining','2'),
 ('P002','komputer','2'),
-('P003','sistem informasi','3');
+('P003','sistem informasi','3'),
+('P004','data digital','7');
 
-INSERT INTO dosen (id_dosen, nama) values 
+INSERT INTO dosen (id_dosen, nama_dosen) values 
 ('D001','agung'),
 ('D002','asep'),
 ('D003','eko');
 
 INSERT INTO kontrak (id_kontrak, nilai, nim, id_matkul, id_dosen) values 
-('K001','100','M001','P001','D001'),
-('K002','80','M002','P001','D002'),
-('K003','20','M003','P002','D003'),
-('K004','30','M004','P002','D001'),
-('K005','40','M005','P003','D002');
+('K001','A','M001','P001','D001'),
+('K002','B','M002','P001','D002'),
+('K003','E','M003','P002','D003'),
+('K004','D','M004','P002','D001'),
+('K005','C','M005','P003','D002'),
+('K006','B','M001','P004','D002'),
+('K007','D','M001','P003','D002');
