@@ -17,3 +17,5 @@ WHERE mahasiswa.jurusan = jurusan.id_jurusan;
 
 SELECT nim, nama, alamat, umur FROM mahasiswa WHERE umur <= 20;
 
+SELECT id_kontrak, nama, nilai FROM kontrak, mahasiswa 
+WHERE kontrak.nim = mahasiswa.nim AND nilai <= 'B';
