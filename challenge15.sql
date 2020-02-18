@@ -37,4 +37,8 @@ JOIN mahasiswa ON kontrak.nim = mahasiswa.nim
 JOIN mata_kuliah ON kontrak.id_matkul = mata_kuliah.id_matkul
 WHERE mata_kuliah.nama_matkul = 'data mining';
 
+SELECT id_kontrak, dosen.nama_dosen, COUNT(nama) FROM kontrak
+JOIN mahasiswa ON kontrak.nim = mahasiswa.nim
+JOIN dosen ON kontrak.id_dosen = dosen.id_dosen
+GROUP BY dosen.nama_dosen;
 
