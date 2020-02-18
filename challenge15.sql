@@ -42,3 +42,4 @@ JOIN mahasiswa ON kontrak.nim = mahasiswa.nim
 JOIN dosen ON kontrak.id_dosen = dosen.id_dosen
 GROUP BY dosen.nama_dosen;
 
+SELECT * FROM mahasiswa ORDER BY umur asc;
