@@ -43,3 +43,12 @@ JOIN dosen ON kontrak.id_dosen = dosen.id_dosen
 GROUP BY dosen.nama_dosen;
 
 SELECT * FROM mahasiswa ORDER BY umur asc;
+
+
+SELECT nama, alamat, nilai, nama_dosen, nama_matkul, nama_jurusan 
+FROM kontrak
+JOIN mahasiswa ON kontrak.nim = mahasiswa.nim
+JOIN mata_kuliah ON mata_kuliah.id_matkul = kontrak.id_matkul
+JOIN dosen ON kontrak.id_dosen = dosen.id_dosen
+JOIN jurusan ON mahasiswa.jurusan = jurusan.id_jurusan
+WHERE nilai BETWEEN 'D' AND 'E';
