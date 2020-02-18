@@ -26,7 +26,7 @@ SELECT nim, nama, alamat, umur FROM mahasiswa WHERE umur <= 20;
 SELECT id_kontrak, nama, nilai FROM kontrak, mahasiswa 
 WHERE kontrak.nim = mahasiswa.nim AND nilai <= 'B';
 
-SELECT id_kontrak, mahasiswa.nama, nilai, sum(sks) FROM kontrak 
+SELECT mahasiswa.nama, sum(sks) FROM kontrak 
 JOIN mahasiswa ON kontrak.nim = mahasiswa.nim
 JOIN mata_kuliah ON kontrak.id_matkul = mata_kuliah.id_matkul
 GROUP BY mahasiswa.nama 
