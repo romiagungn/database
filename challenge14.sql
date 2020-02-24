@@ -3,7 +3,6 @@ CREATE TABLE jurusan(
     nama_jurusan varchar(50)
 );
 
-
 CREATE TABLE mahasiswa(
     nim varchar(50) primary key NOT NULL,
     nama varchar(50),
@@ -66,3 +65,5 @@ INSERT INTO kontrak (id_kontrak, nilai, nim, id_matkul, id_dosen) values
 ('K005','C','M005','P003','D002'),
 ('K006','B','M001','P004','D002'),
 ('K007','D','M001','P003','D002');
+
+
